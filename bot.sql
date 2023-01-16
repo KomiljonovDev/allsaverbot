@@ -38,9 +38,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `fromid`, `menu`, `step`, `status`, `created_at`) VALUES
-(1, 931026030, '', '', 'supperadmin', '2023-01-05 08:13:35'),
-(7, 1112755577, '', '', 'admin', '2023-01-10 21:17:28'),
-(8, 1726396949, '', '', 'admin', '2023-01-10 21:17:51');
+(1, 931026030, '', '', 'supperadmin', '2023-01-05 08:13:35');
 
 -- --------------------------------------------------------
 
@@ -57,21 +55,10 @@ CREATE TABLE `channels` (
 --
 -- Dumping data for table `channels`
 --
-
-(1, 'status', 'on'),
-(5, 'oKDeveloper | Komiljonov Dev Shaxsiy blog', '@oKDeveloper');
+INSERT INTO `channels` (`id`, `name`, `target`) VALUES
+(1, 'status', 'on');
 
 -- --------------------------------------------------------
-
---
--- Table structure for table `ref_user_videos`
---
-
-CREATE TABLE `ref_user_videos` (
-  `user_id` int(11) NOT NULL,
-  `url` varchar(1000) NOT NULL,
-  `extension` varchar(20) NOT NULL DEFAULT 'mp4'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 --
@@ -125,20 +112,6 @@ CREATE TABLE `users` (
 -- Table structure for table `vid`
 --
 
-CREATE TABLE `vid` (
-  `id` int(11) NOT NULL,
-  `fromid` varchar(255) NOT NULL,
-  `url` varchar(500) NOT NULL,
-  `file_id` varchar(500) NOT NULL,
-  `description` varchar(500) NOT NULL,
-  `source` varchar(255) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `down` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Indexes for dumped tables
---
 
 --
 -- Indexes for table `admins`
@@ -164,15 +137,6 @@ ALTER TABLE `sendAd`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `vid`
---
-ALTER TABLE `vid`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
 
 --
 -- AUTO_INCREMENT for table `admins`
@@ -200,10 +164,6 @@ ALTER TABLE `users`
 
 --
 -- AUTO_INCREMENT for table `vid`
---
-ALTER TABLE `vid`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
